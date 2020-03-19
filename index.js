@@ -67,7 +67,7 @@ async function daka() {
         }
     );
 
-    const songid = [];
+    let songid = [];
     for (let index = 0; index < playlist.length; index++) {
         const playlist_id = playlist[index];
         const id = await rp.post(
@@ -87,14 +87,17 @@ async function daka() {
                 json: true,
                 transform(body) {
                     if (body.code === 200) {
-                        return body.playlist.trackIds;
+                        return body.playlist.trackIds.map(i => i.id);
                     } else {
                         throw new Error('获取歌曲ID失败');
                     }
                 }
             }
         );
-        songid.push(id);
+        songid = songid.concat(id);
+        if (songid.length >= 300) {
+            break;
+        }
     }
 
     const daka = await rp.post(
