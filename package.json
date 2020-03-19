@@ -1,0 +1,15 @@
+{
+  "name": "163_daka",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/Ice-Hazymoon/163_daka",
+  "author": "Ice-Hazymoon",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "crypto-js": "^4.0.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.5",
+    "tough-cookie": "^3.0.1"
+  }
+}
