@@ -128,13 +128,10 @@ async function daka() {
         }
     );
     if (daka.code === 200) {
-        res.status(200).json({
-            data: true
-        });
+        return daka;
     } else {
         throw new Error(daka.message);
     }
-    return daka;
 }
 
 daka().then(e => {
