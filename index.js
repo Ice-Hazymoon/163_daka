@@ -95,9 +95,6 @@ async function daka() {
             }
         );
         songid = songid.concat(id);
-        if (songid.length >= 300) {
-            break;
-        }
     }
 
     const daka = await rp.post(
