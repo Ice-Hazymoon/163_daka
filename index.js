@@ -20,12 +20,14 @@ async function daka() {
                 phone: phone,
                 password: MD5(password),
                 countrycode: '86',
-                rememberLogin: true
+                rememberLogin: 'true',
+                csrf_token: ''
             }),
             headers: {
-                'User-Agent':
-                    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:46.0) Gecko/20100101 Firefox/46.0',
-                Referer: 'https://music.163.com'
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.2 Safari/605.1.15',
+                Referer: 'https://music.163.com',
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Cookie': 'os=pc'
             },
             json: true,
             resolveWithFullResponse: true,
